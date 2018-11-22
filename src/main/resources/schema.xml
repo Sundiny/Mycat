@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+
+	<schema name="" checkSQLschema="false" sqlMaxLimit="100">
+		<!-- auto sharding by id (long) -->
+		<table name="" dataNode="" rule="" />
+		<table name="" dataNode="" />
+	</schema>
+
+	<dataNode name="" dataHost="" database="" />
+	<dataNode name="" dataHost="" database="" />
+
+	<dataHost name="" maxCon="1000" minCon="10" balance="0"
+			  writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<writeHost host="" url="" user="" password="">
+			<readHost host="" url="" user="" password="" />
+		</writeHost>
+	</dataHost>
+
+
+</mycat:schema>
